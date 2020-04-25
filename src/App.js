@@ -5,6 +5,9 @@ import './App.css';
 //config
 import { BASE_URL } from "../src/config/credential";
 
+//component
+import List  from '../src/component/List'
+
 export default class App extends React.Component{
   constructor(props) {
     super(props)
@@ -27,7 +30,21 @@ export default class App extends React.Component{
     })
     console.log('res=>' , response)
   }
+
+  getItem = ind => {
+    this.setState({
+      num : ind
+    })
+  }
   render() {
-    return <h1>Pagination</h1>
+    const {list , num } = this.state
+
+    if (!list) return null
+    return <div>
+      <list getItem={this.getItem} num={num}/>
+      {/* {list.map(val => {
+        return <p>{val.title}</p>
+      })} */}
+    </div>
   }
 }
