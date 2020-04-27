@@ -11,11 +11,11 @@ export default class List extends React.Component{
 
     render() {
         const { list } = this.props
-        const { color = 'blue', getItem, num } = this.props
+        const { color = 'blue'} = this.props
 
         return <ul>
             {list.map((val, ind) => {
-                <li style={color} onClick={()=>getItem(ind)}>
+                <li style={color}>
                     {val}
                 </li>
             })}
