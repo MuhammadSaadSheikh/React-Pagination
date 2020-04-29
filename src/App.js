@@ -1,20 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-//config
-import { BASE_URL } from "../src/config/credential";
+//route
+import { Router } from './Routes'
+import Login from './Screens/Login'
+import Location from './Screens/Location'
+import Home from './Screens/Home'
+import Profile from './Screens/Profile'
 
-//component
-import List  from '../src/component/List'
-import SlideBar  from '../src/component/SlideBar'
-
-export default class App extends React.Component{
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return <SlideBar/>
-  }
+function App(props) {
+  return (
+    <Home/>
+    )
 }
+
+export default App;
